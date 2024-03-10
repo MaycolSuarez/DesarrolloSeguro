@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Enlaces a Bootstrap CSS desde tu carpeta local -->
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<style>
+  #contenidoList {
+    display: none;
+  }
+</style>
+<body id="contenidoList">
+  <div class="container" >
+    <nav class="navbar navbar-expand-lg bg-body-tertiary " data-bs-theme="dark">
+      <div class="container-fluid" >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button class="nav-link" onclick="salir()">Salir</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+    <!-- Content here -->
+    <table id="resulTable" class="table table-striped-columns">
+      <thead>
+        <tr>
+          <th scope="col">Nombre de usuario</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Pais</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+    <div>
+      <button class="btn btn-primary mt-4" onclick="window.location.href='/templates/agregar.html'">
+          Agregar
+      </button>
+  </div>
+  </div>
+
+
+  <!-- Enlaces a Bootstrap JavaScript y Popper.js desde tu carpeta local -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/list.js"></script>
+</body>
+
+</html>

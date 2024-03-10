@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Enlaces a Bootstrap CSS desde tu carpeta local -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Content here -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Nuevo usuario</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control" id="username" placeholder="Nombre de usuario" oninput="filtrarCaracteres(event)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastname" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="lastname" placeholder="Apellido" oninput="filtrarCaracteresNums(event)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstname" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="firstname" placeholder="Nombre" oninput="filtrarCaracteresNums(event)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="country" class="form-label">Pais</label>
+                            <input type="text" class="form-control" id="country" placeholder="Pais" oninput="filtrarCaracteresNums(event)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" id="password" oninput="filtrarCaracteres(event)" placeholder="Contraseña" required>
+                        </div>
+                        <div id="passwordCharacteres" class="text-danger"></div>
+                        <div class="mb-3">
+                            <label for="confirm_password">Confirmar contraseña</label>
+                            <input type="password" class="form-control" id="confirm_password" oninput="filtrarCaracteres(event)" placeholder="Confirmar contraseña"  required>
+                        </div>
+                        <div id="passwordError" class="text-danger"></div>
+                    </div>
+                    <div class="card-footer">
+                        <button id="submitButton" class="btn btn-primary" onclick="agregar()" disabled>Agregar</button>
+                        <a class="btn btn-warning" href="/index.html">Cancelar</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Los campos no pueden estar vacíos.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="succesModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Se agrego el usuario de forma correcta.
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-primary" href="/index.html">Cerrar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Enlaces a Bootstrap JavaScript y Popper.js desde tu carpeta local -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/agregar.js"></script>
+</body>
+
+</html>

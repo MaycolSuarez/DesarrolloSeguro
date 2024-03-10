@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registro</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div class="card mt-5">
+            <div class="card-header">
+              <h5 class="card-title text-center">Registro</h5>
+            </div>
+            <div class="card-body">
+              <form id="registerForm">
+                <div class="form-group">
+                  <label for="username">Nombre de usuario</label>
+                  <input type="text" class="form-control" id="username" placeholder="Nombre de usuario" oninput="filtrarCaracteres(event)" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Apellido</label>
+                    <input type="text" class="form-control" id="lastname" placeholder="Apellido" oninput="filtrarCaracteresNums(event)" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Nombre</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="Nombre" oninput="filtrarCaracteresNums(event)" required>
+                  </div>
+                <div class="form-group">
+                  <label for="email">Pais</label>
+                  <input type="text" class="form-control" id="country" placeholder="Pais" oninput="filtrarCaracteresNums(event)" required>
+                </div>
+                <div class="form-group">
+                  <label for="password">Contraseña</label>
+                  <input type="password" class="form-control" id="password" oninput="filtrarCaracteres(event)" placeholder="Contraseña" required>
+                </div>
+                <div id="passwordCharacteres" class="text-danger"></div>
+                <div class="form-group">
+                  <label for="confirm_password">Confirmar contraseña</label>
+                  <input type="password" class="form-control" id="confirm_password" oninput="filtrarCaracteres(event)" placeholder="Confirmar contraseña" required>
+                </div>
+                <div id="passwordError" class="text-danger"></div>
+                <button id="submitButton" type="submit" class="btn btn-primary btn-block" disabled>Registrate</button>
+                <a href="/login.html" class="btn btn-primary btn-block" >Ingresa</a>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/js/register.js"></script>
+  </body>
+</html>

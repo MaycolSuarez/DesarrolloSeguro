@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar</title>
+    <!-- Enlaces a Bootstrap CSS desde tu carpeta local -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <!-- Content here -->
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Editar</h5>
+                        <div class="mb-3">
+                            <label for="id" class="form-label"></label>
+                            <input type="hidden" class="form-control" id="id">
+                            <input type="hidden" class="form-control" id="password">
+                            <input type="hidden" class="form-control" id="role">
+                        </div>
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nombre de usuario</label>
+                            <input type="text" class="form-control" id="username" oninput="filtrarCaracteres(event)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="lastname" class="form-label">Apellido</label>
+                            <input type="text" class="form-control" id="lastname" oninput="filtrarCaracteresNums(event)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="firstname" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="firstname" oninput="filtrarCaracteresNums(event)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="country" class="form-label">Pais</label>
+                            <input type="text" class="form-control" id="country" oninput="filtrarCaracteresNums(event)" required>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-primary mt-4" onclick="accept()">
+                            Actualizar
+                        </button>
+                        <a href="../index.html" class="btn btn-warning mt-4">
+                            Cancelar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Los campos no pueden estar vacíos.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+              </div>
+            </div>
+        </div>          
+    </div>
+    
+    <!-- Enlaces a Bootstrap JavaScript y Popper.js desde tu carpeta local -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/edit.js"></script>
+</body>
+
+</html>
